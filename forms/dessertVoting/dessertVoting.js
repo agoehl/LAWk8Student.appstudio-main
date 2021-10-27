@@ -7,17 +7,25 @@ dessertVoting.onshow=function(){
   /* add a loop here that adds all the desserts in the array 
      to the dropdown.
   */
+  for (i = 0; i <= dessertList.length -1; i++)
+     drpDesserts.addItem(dessertList[i])
 }
 
 
-drpDesserts.onclick=function(){
-// this 'if' kicks user out if they  just clicked on control 
-// but not on one item in the list.
+drpDesserts.onclick=function(s){
+/* this 'if' kicks user out if they  just clicked on control 
+ but not on one item in the list.
+ */
     if (typeof(s) == "object")   
       return                    
-    else {  // the user picked something
-        /* add code here to get item user chose and output 
+    } else {  /*the user picked something
+        add code here to get item user chose and output 
         it in a label, using a literal.
         */
+        drpDesserts.value = s
+        lblDessertChoice.value = (`You picked ${s} - that is a great choice!`)
     }
+
+btnMove.onclick=function(){
+  ChangeForm(describeYou)
 }
